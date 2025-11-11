@@ -1,0 +1,23 @@
+[
+    {
+        "Name": "miguel",
+        "Profession": "t.i",
+        "Skills": "python",
+        "Estage": "novo",
+        "Created": "2025-11-11"
+    },
+    {
+        "Name": "joao",
+        "Profession": "tecnico",
+        "Skills": "sql",
+        "Estage": "novo",
+        "Created": "2025-11-11"
+    },
+    {
+        "Name": "daniel",
+        "Profession": "engenheiro",
+        "Skills": "matematica",
+        "Estage": "novo",
+        "Created": "2025-11-11"
+    }
+]
