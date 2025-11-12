@@ -50,7 +50,9 @@ O sistema pode servir como base para aplicações futuras em assistentes intelig
 
 ## Funcionamento:
 
-[Clique aqui para assistir o funcionamento](https://youtu.be/_5ZvJkxqtAw)
+Video com um exemplo de funcionamento do sistema:
+
+[Clique aqui para assistir](https://youtu.be/kImLy80qgGk)
 
 ## Integrantes
 1. Miguel Vanucci RM: 563491
