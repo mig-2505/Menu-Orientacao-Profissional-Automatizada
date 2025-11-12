@@ -19,5 +19,19 @@
         "Skills": "matematica",
         "Estage": "novo",
         "Created": "2025-11-11"
+    },
+    {
+        "Name": "jose",
+        "Profession": "backend",
+        "Skills": "python",
+        "Stage": "novo",
+        "CreatedAt": "2025-11-11"
+    },
+    {
+        "Name": "guilherme",
+        "Profession": "back e front",
+        "Skills": "python, html",
+        "Stage": "novo",
+        "CreatedAt": "2025-11-11"
     }
 ]
