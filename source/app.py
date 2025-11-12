@@ -24,7 +24,6 @@ def main():
             search_result = recommendation.search(name)
 
             if search_result:
-                recommendation.recommendation(name)
                 recommendation.check_recommendation(name)
             else:
                 print("Nao foi possivel terminar.")

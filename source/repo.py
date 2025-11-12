@@ -14,6 +14,17 @@ class Repo:
         """ Imprimir as sugestões """
         dt = Repo.get_suggestions()
         result = ""
-        for key, value in dt.items():
-            result += f"Para {key} a melhor sugestão é: {value}\n"
+        count = 0
+        limit = 3
+        for skill, data in dt.items():
+            if count >= limit:
+                break
+            current = data.get("current", "Não especificado")
+            future = data.get("future", "Não especificado")
+            result += (
+            f"\nHabilidade: {skill}\n"
+            f"  Profissão Atual: {current}\n"
+            f"  Profissão do Futuro: {future}\n"
+        )
+            count += 1
         return result

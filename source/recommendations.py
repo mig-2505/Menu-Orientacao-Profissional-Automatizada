@@ -14,25 +14,30 @@ class Recommendation(Profiles):
                 return i
         print("Nome nao cadastrado, tente novamente!")
 
-    def recommendation(self, name):
-        """ Mostra as habilidades do usuário procurado """
-        for i in self.users:
-            if name in i['Name'].lower():
-                print(f"\nHabilidades de {i['Name']}: {i['Skills']}")
-                return
-        print("Usuario nao encontrado.")
-
     def check_recommendation(self, name):
-        """ Verifica as habilidades do usuario procurado e recomenda áreas de atuação """
+        """Verifica as habilidades do usuário procurado e recomenda áreas de atuação"""
         suggestions = Repo.get_suggestions()
         formatted_suggestions = Repo.print_suggestions()
-        for i in self.users:
-            skills = i['Skills'].lower()
-            if skills in suggestions:
-                if name in i['Name'].lower():
-                    print(f"\nPara {i['Name']}:")
-                    print(f"Sua habilidade em '{skills}' combina com a área de {suggestions[skills]}.\n")
-            else:
-                print(f"\nPara {i['Name']}:")
-                print(f"Nenhuma recomendação encontrada para a habilidade '{skills}'.")
-                print(formatted_suggestions)
+
+        for user in self.users:
+            if name.lower() in user['Name'].lower():
+                skills_list = [s.strip().lower() for s in user['Skills'].split(',')]
+                print(f"\nPara {user['Name']}:")
+                found_any = False
+                for skill in skills_list:
+                    if skill in suggestions:
+                        current = suggestions[skill]["current"]
+                        future = suggestions[skill]["future"]
+                        print(f"Habilidade: {skill}")
+                        print(f"Profissão Atual: {current}")
+                        print(f"Profissão do Futuro: {future}\n")
+                        found_any = True
+                    else:
+                        print(f"Nenhuma recomendação encontrada para a habilidade '{skill}'.\n")
+                if not found_any:
+                    print("Algus exemplos de habilidades:")
+                    print(formatted_suggestions)
+                    print("...")
+                break
+        else:
+            print(f"Nenhum usuário encontrado com o nome '{name}'.")
